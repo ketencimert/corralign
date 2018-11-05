@@ -113,12 +113,12 @@ ggparcoord(subset_w, columns = 2:10,
 
 ## Working Principle of the Algorithm
 
-1.The algorithm takes a data frame.  
-2.It normalizes the data (meaning that all data in each column is between 1 and 0).  
-3.The algorithm constructs a correlation matrix between attributes.  
-4.At ith stage the algorithm saves the attribute that is correlated most negatively with (i-1)th attribute to its memory.  
-5.The algorithm deletes ith attribute from the row of correlation data frame.  
-6.The algorithm moves into the next attribute.  
+**1.** The algorithm takes a data frame.  
+**2.** It normalizes the data (meaning that all data in each column is between 1 and 0).  
+**3.** The algorithm constructs a correlation matrix between attributes.  
+**4.** At ith stage the algorithm saves the attribute that is correlated most negatively with (i-1)th attribute to its memory.  
+**5.** The algorithm deletes ith attribute from the row of correlation data frame.  
+**6.** The algorithm moves into the next attribute.  
 
 At the end the algorithm has items that are negatively correlated with each other the most in its memory.
 
