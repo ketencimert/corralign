@@ -2,7 +2,7 @@
 
 For the community contribution we are going to establish a sorting algorithm that will sort the attributes of a given data frame according to their correlation to establish best possible visualization. 
 
-In class, we have discussed that sometimes it is hard to see certain patterns from parcoord. This happens when the data that are going to be plotted are sorted randomly.  
+We have discussed that sometimes it is hard to see certain patterns from parcoord. This happens when the data that are going to be plotted are sorted randomly.  
 
 If the sorting of the attributes are random, the trends can be hard to see.  
 In this community contribution we are going to inspect if different sorting methods of attributed provide a better visualization of the data.  
@@ -69,6 +69,8 @@ ggparcoord(subset_w_shuffle, columns = 2:10,
        y = "Attributes\n\n", color = "Wine Type")
 ```
 
+<img width="700" height="437" src="https://i.imgur.com/4v73ei9.jpg">
+
 ## Min Correlation Sorting
 
 In the below graph the attributes are sorted according to negative correlations.
@@ -87,11 +89,11 @@ The sorting is done with respect to correlation between attributes.
   
   and so forth.  
   
-  Now we can directly say that ${i^{th}}$ attribute has a negative affect on attribute ${i+1}$.  
+  Now we can directly say that ith attribute has a negative affect on attribute (i+1)th.  
   So for example if a Type 0 wine has a strong Alcohol ratio, then it is certain that in the next stage (Alcality of Ash) it is     going to show a weak characteristic.  
   If we observe the parcoord, it certainly does that.  
     
-  At this point one might ask why most negative correlation. Think that we sort the attributes with respect to positive       correlations. That would also certainly give us a pattern. But is I believe that it would be debatable to say that the resulting pattern would be a good visualization. Because this time the ${i^{th}}$ attribute would have a positive impact on ${(i-1)^{th}}$ attribute. Thus, we wont observe a high frequency sinusoidal weave. Instead we would observe a continuous line for a certain attribute followed by a sudden shift.
+  At this point one might ask why most negative correlation. Think that we sort the attributes with respect to positive       correlations. That would also certainly give us a pattern. But is I believe that it would be debatable to say that the resulting pattern would be a good visualization. Because this time the ith attribute would have a positive impact on (i-1)th attribute. Thus, we wont observe a high frequency sinusoidal weave. Instead we would observe a continuous line for a certain attribute followed by a sudden shift.
 
 ```{r}
 subset_w$Type <- factor(subset_w$Type, labels = c("Barolo",
@@ -107,27 +109,20 @@ ggparcoord(subset_w, columns = 2:10,
        y = "Attributes\n\n", color = "Wine Type")
 ```
 
-
+<img width="700" height="437" src="https://i.imgur.com/wKprdG8.jpg">
 
 ## Working Principle of the Algorithm
 
 1.The algorithm takes a data frame.  
 2.It normalizes the data (meaning that all data in each column is between 1 and 0).  
 3.The algorithm constructs a correlation matrix between attributes.  
-4.At ${i^{th}}$ stage the algorithm saves the attribute that is correlated most negatively with ${(i-1)^{th}}$ attribute to its memory.  
-5.The algorithm deletes ${i^{th}}$ attribute from the row of correlation data frame.  
+4.At ith stage the algorithm saves the attribute that is correlated most negatively with (i-1)th attribute to its memory.  
+5.The algorithm deletes ith attribute from the row of correlation data frame.  
 6.The algorithm moves into the next attribute.  
 
 At the end the algorithm has items that are negatively correlated with each other the most in its memory.
 
 Data frame is sorted according to those attributes and plotted respectively.
-
-
-## Next Step
-
-In the next step we are going to convert this into a package so that everyone who has trouble interpreting information from parcoord can use.
-
-Right now, I am not knowledgeable about converting an idea into a package - thus I will do research- and would be glad to have support.
 
 ## Conclusion
 
