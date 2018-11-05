@@ -1,27 +1,4 @@
----
-title: "Community Contribution Report"
-author: "Mert Ketenci - mk4139"
-date: "3 November 2018"
-output:
-  pdf_document: default
-  html_document: default
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-library(cluster)
-library(data.table)
-library(tidyverse)
-library(dplyr)
-library(carData)
-library(MASS)
-library(data.table)
-library(extracat)
-library(pgmm)
-library(GGally)
-```
-
-## Indtroduction
+## Introduction
 
 For the community contribution we are going to establish a sorting algorithm that will sort the attributes of a given data frame according to their correlation to establish best possible visualization. 
 
