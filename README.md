@@ -130,4 +130,4 @@ Data frame is sorted according to those attributes and plotted respectively.
 
 To help data scientist save time I plan to establish a simple algorithm that sorts the attributes of data with respect to correlation with another attribute.  
 
-I hope that this way data scientists are going to observe the relationship between variables through parcoord much more easily.
+I hope that this way data scientists are going to observe the relationship between variables through parcoord much more easily.  
